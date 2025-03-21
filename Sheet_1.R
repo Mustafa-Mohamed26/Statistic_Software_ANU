@@ -9,13 +9,13 @@ print(result_b)
 
 # c
 eval_poly <- function(x) {
-  return(4*x^2 - 2*x + 3)
+  return(4 * x^2 - 2 * x + 3)
 }
 print(eval_poly(2))
 
 # d
 eval_poly_2 <- function(x) {
-  return(2*x - x^2 + 4*x + 6)
+  return(2 * x - x^2 + 4 * x + 6)
 }
 print(eval_poly_2(3))
 
@@ -48,10 +48,10 @@ library() # Loads installed packages
 # i
 x1 <- c(FALSE, FALSE, TRUE, TRUE)
 x2 <- c(TRUE, FALSE, FALSE, TRUE)
-Result <- x1 & x2
-result <- x1 & !x2
-print(Result)
-print(result)
+result_1 <- x1 & x2
+result_2 <- x1 & !x2
+print(result_1)
+print(result_2)
 
 # Task 3: Generate sequences
 seq1 <- seq(0, 10, by = 1)
