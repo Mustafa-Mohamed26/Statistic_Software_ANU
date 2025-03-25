@@ -1,16 +1,17 @@
 # Task 1: Mathematical Calculations
 
-# (a) Compute the sum of (i^3 + i^2) from i=10 to 100
-sum_a <- sum((10:100)^3 + (10:100)^2)
+# (a) Compute the sum of (i^3 + 4*i^2) from i=10 to 100
+sum_a <- sum((10:100)^3 + 4*(10:100)^2)
 print(sum_a)
 
-# (b) Generate the sequence (2^2, 2^3, 2^4, ..., 2^25)
-seq_b <- 2^(2:25)
-print(seq_b)
+## (b) Generate the sequence (2^2, 2^3, 2^4, ..., 2^25)
+for (i in 1:25) {
+   print(2^i / i)
+}
 
-# (c) Compute the sum of (even numbers / odd numbers) from 2/1 to 38/39
-num_c <- seq(2, 38, by = 2) # Even numbers: 2, 4, 6, ..., 38
-den_c <- seq(1, 39, by = 2) # Odd numbers: 1, 3, 5, ..., 39
+## (c) Compute the sum of (even numbers / odd numbers) from 2/1 to 38/39
+num_c <- seq(2, 38, 2) # Even numbers: 2, 4, 6, ..., 38
+den_c <- seq(1, 39,2) # Odd numbers: 1, 3, 5, ..., 39
 sum_c <- sum(num_c / den_c)
 print(sum_c)
 
@@ -30,7 +31,7 @@ print(x_labels)
 
 # Task 3: Solving a System of Linear Equations
 
-# Define matrix A (coefficients)
+## Define matrix A (coefficients)
 A <- matrix(c(
     1, 2, 3, 4, 5,
     2, 1, 2, 3, 4,
@@ -41,23 +42,24 @@ A <- matrix(c(
 
 # Define vector y (right-hand side)
 y <- c(7, -1, -3, 5, 17)
+B <- matrix(y,5,1)
 
 # Solve for x (Ax = y)
-x_solution <- solve(A, y)
+x_solution <- solve(A, B)
 print(x_solution)
 
-# Task 4: Implementing the Function f(x)
+## Task 4: Implementing the Function f(x)
 
 # Define the function to evaluate f(x) based on given conditions
 tmpFn <- function(xVec) {
-    result <- numeric(length(xVec)) # Initialize result vector
-
-    # Apply conditions
-    result[xVec < 0] <- xVec[xVec < 0]^2 + 2 * xVec[xVec < 0] + 3
-    result[xVec >= 0 & xVec < 2] <- xVec[xVec >= 0 & xVec < 2] + 3
-    result[xVec >= 2] <- xVec[xVec >= 2]^2 + 7 * xVec[xVec >= 2] - 2
-
-    return(result)
+    if (xVec < 0) {
+      result <- xVec^2 + 2 * xVec + 3
+    } else if (xVec >= 0 && xVec < 2) {
+      result <- xVec + 3
+    } else {
+      result <- xVec^2 + 7 * xVec - 2
+    }
+  return(result)
 }
 
 # Example usage:

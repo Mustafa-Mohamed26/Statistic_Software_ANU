@@ -1,6 +1,6 @@
 # Task 1: Evaluate expressions
 # a
-result_a <- c(1, 2, 3) * (sin(2 / 4) * tan(1.1)) * exp(-pi) + 1
+result_a <- 3 * (sin((2 * pi) / 4) + atan(1.1)) * exp(-2)
 print(result_a)
 
 # b
@@ -8,16 +8,16 @@ result_b <- 5 %% 2
 print(result_b)
 
 # c
-eval_poly <- function(x) {
-  return(4 * x^2 - 2 * x + 3)
+result_c <- function(x) {
+  return(sqrt(4 * x ^ 2 - 2 * x + 3))
 }
-print(eval_poly(2))
+print(result_c(2))
 
 # d
-eval_poly_2 <- function(x) {
-  return(2 * x - x^2 + 4 * x + 6)
+result_d <- function(x) {
+  return(sqrt(4 * x ^ 2 - 2 * x + 3) + 1 / 6)
 }
-print(eval_poly_2(3))
+print(result_d(3))
 
 # Task 2: Explain outputs
 # a
@@ -54,15 +54,15 @@ print(result_1)
 print(result_2)
 
 # Task 3: Generate sequences
-seq1 <- seq(0, 10, by = 1)
+seq1 <- seq(0, 10, 1)
 print(seq1)
 
 # Task 4
-seq2 <- seq(10, 100, by = 5)
+seq2 <- seq(10, 100, 5)
 print(seq2)
 
 # Task 5
-seq3 <- seq(20, 10, by = -2)
+seq3 <- seq(20, 10, -2)
 print(seq3)
 
 # Task 6: Compute mean and standard deviation of children's weights

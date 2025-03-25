@@ -31,8 +31,8 @@ dim(diag_vec)  # NULL, as diag_vec is a vector
 dim(diag_mat)  # Dimensions: (3x3)
 
 # (g) Matrix binding and element-wise operations
-mat_C <- matrix(c(1,3,3,9,6,5), 2, 3)
-mat_D <- matrix(c(9,8,8,2,9,0), 2, 3)
+mat_C <- matrix(c(1, 3, 3, 9, 6, 5), 2, 3)
+mat_D <- matrix(c(9, 8, 8, 2, 9, 0), 2, 3)
 rbind(mat_C, mat_D)  # Row binding
 cbind(mat_D, mat_C)  # Column binding
 diag_vals <- diag(mat_C)  # Extract diagonal
@@ -54,7 +54,7 @@ letters_subset <- letters[10:15]  # Extracts 'j' to 'o'
 # (k) Incorrect assignment (commented out as it's invalid)
 # 1:3 = c(T, F, T)  # Incorrect syntax
 
-# Task 2: Truth Table for Logical AND
+## Task 2: Truth Table for Logical AND
 truth_table <- expand.grid(A = c(TRUE, FALSE), B = c(TRUE, FALSE))
 truth_table$AND <- with(truth_table, A & B)
 print(truth_table)
@@ -80,13 +80,12 @@ mat_F <- matrix(10, nrow=15, ncol=3)  # 15x3 matrix filled with 10
 mat_FTF <- t(mat_F) %*% mat_F  # Compute mat_F^T * mat_F
 print(mat_FTF)
 
-# Task 6: Custom function to compute series sum
-compute_series <- function(num_x, num_n) {
-  if (num_n <= 0 || !is.numeric(num_n) || num_n != as.integer(num_n)) {
-    stop("num_n must be a strictly positive integer")
-  }
-  sum(sapply(0:num_n, function(i) num_x^i / (i+1)))
+# Task 6: Custom function to compute series sum 
+tmpFn=function(x,n) {
+  h=1
+  s=sum(x^(1:n)/(1:n))
+  k=h+s
+  return(k)
 }
 
-# Example usage:
-compute_series(2, 3)
+tmpFn(2,3)
