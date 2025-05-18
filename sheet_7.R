@@ -54,4 +54,3 @@ print(t_sodium)
 # c. Test for equality of variances in calories (F-test)
 f_var_calories <- var.test(beef$calories, poultry$calories)
 print(f_var_calories)
-
