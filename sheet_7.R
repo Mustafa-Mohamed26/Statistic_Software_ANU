@@ -11,16 +11,22 @@ print(t_test_q1)
 ci_q1 <- t_test_q1$conf.int
 cat("Q1 95% CI for mean:", ci_q1, "\n\n")
 
+# ==============================================================================
+
 # Q2: One-sample t-test (μ < 12.5)
 survival <- c(11.7, 10.5, 11.2, 12.9, 12.7, 10.3, 10.4, 10.9, 11.3, 10.6)
 t_test_q2 <- t.test(survival, mu = 12.5, alternative = "less")
 print(t_test_q2)
+
+# ==============================================================================
 
 # Q3: Paired t-test for before and after program
 before <- c(45, 73, 46, 124, 33, 57, 83, 34, 17)
 after  <- c(44, 65, 44, 119, 35, 56, 80, 31, 11)
 t_test_q3 <- t.test(before, after, paired = TRUE, alternative = "greater")
 print(t_test_q3)
+
+# =============================================================================
 
 # Q4: Two-sample t-test and F-test for equality of variances
 A <- c(9.5, 10.5, 9.0, 9.75, 10.0, 13.0, 10.0, 13.5, 10.0, 9.5, 10.0, 9.75)
@@ -33,6 +39,8 @@ print(t_test_q4a)
 # b. F-test for equal variances
 var_test_q4b <- var.test(A, B)
 print(var_test_q4b)
+
+# ============================================================================
 
 # Q5: Using hotdog.txt file (assume it's in working directory)
 # Read data
